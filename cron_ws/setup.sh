@@ -1,9 +1,15 @@
 #!/bin/bash
 
-rm -rf ~/.config/cron
-mkdir -p ~/.config/cron
+CRON_DIR="/home/${USER}/.config/cron"
 
-ln -s $(pwd)/backup.sh ~/.config/cron/backup.sh
-ln -s $(pwd)/crontab ~/.config/cron/crontab
-crontab ~/.config/cron/crontab
+rm -rf ${CRON_DIR}
+mkdir -p ${CRON_DIR}
 
+cat << EOF > ${CRON_DIR}/backup.sh
+#!/bin/bash
+
+tar czvf ${CRON_BACKUP_DIR}/bak_${USER}_workspace.tar.gz ~/workspace/
+EOF
+ln -s $(pwd)/crontab ${CRON_DIR}/crontab
+
+crontab ${CRON_DIR}/crontab
