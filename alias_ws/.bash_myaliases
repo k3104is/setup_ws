@@ -1,0 +1,37 @@
+
+#cd
+alias ..='cd ..'
+
+# git
+alias ga='git add'
+alias gd='git diff'
+alias gs='git status'
+alias gp='git push'
+alias gb='git branch'
+alias gst='git status'
+alias gco='git checkout'
+alias gf='git fetch'
+alias gc='git commit'
+
+# apt
+alias agi='sudo apt install'
+alias agr='sudo apt remove'
+alias agu='sudo apt update'
+
+# safety
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+
+# find
+alias ff='find ./ -type f'
+alias fd='find ./ -type d'
+
+# 1 charactor
+alias b='byobu'
+alias c='cd'
+alias d='docker'
+alias g='grep'
+alias m='mkdir'
+alias p='ping'
+alias v='view'
