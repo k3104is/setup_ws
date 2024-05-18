@@ -1,5 +1,5 @@
 #!/bin/bash
 
-mv ~/.vimrc ~/.vimrc.bak
+# mv ~/.vimrc ~/.vimrc_$(date "+%y%m%d").bak
 
-ln -s $(pwd)/.vimrc ~/.vimrc
+cp ./.vimrc ~/.vimrc

@@ -8,10 +8,8 @@ if [ -f ~/.bash_myaliases ]; then
   . ~/.bash_myaliases
 fi
 EOF
-echo added
 fi
 
 cp ./.bash_myaliases ~/.bash_myaliases
-echo copied
 
 . ~/.bash_myaliases
