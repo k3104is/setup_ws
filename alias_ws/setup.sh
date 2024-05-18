@@ -5,7 +5,7 @@ cat << EOF >> ~/.bashrc
 
 # my_aliases
 if [ -f ~/.bash_myaliases ]; then
-  . ~/.bash_aliases
+  . ~/.bash_myaliases
 fi
 EOF
 echo added
