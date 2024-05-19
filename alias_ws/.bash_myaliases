@@ -27,6 +27,10 @@ alias rm='rm -i'
 alias ff='find ./ -type f'
 alias fd='find ./ -type d'
 
+# docker
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+
 # 1 charactor
 alias b='byobu'
 alias c='cd'
