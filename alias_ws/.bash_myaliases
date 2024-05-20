@@ -31,6 +31,9 @@ alias fd='find ./ -type d'
 alias dcu='docker compose up -d'
 alias dcd='docker compose down'
 
+# vim
+alias vr='vim -R'
+
 # 1 charactor
 alias b='byobu'
 alias c='cd'
