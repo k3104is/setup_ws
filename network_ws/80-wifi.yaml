@@ -1,0 +1,16 @@
+network:
+  version: 2
+  wifis:
+    renderer: networkd
+    wlan0:
+      access-points:
+        aterm-e5370a-g:
+          password: xxx
+      dhcp4: false
+      addresses: [192.168.10.xxx/24]
+      routes:
+        - to: default
+          via: 192.168.10.xxx/24
+      nameservers:
+        addresses: [192.168.10.xxx/24, 1.1.1.1, 8.8.8.8]
+      optional: true
