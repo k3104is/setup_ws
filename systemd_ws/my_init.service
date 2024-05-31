@@ -1,7 +1,7 @@
 [Unit]
-Description = my init
+Description = my_init
 After=local-fs.target
-ConditionPathExists=/home/rpi4/workspace/setup_ws/systemd_ws/
+ConditionPathExists=/home/rpi4/workspace/setup_ws/systemd_ws
 
 [Service]
 ExecStart=/home/rpi4/workspace/setup_ws/systemd_ws/my_init.sh
