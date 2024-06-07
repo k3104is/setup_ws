@@ -1,10 +1,10 @@
 [Unit]
 Description = my_init
 After=local-fs.target
-ConditionPathExists=/home/rpi4/workspace/setup_ws/systemd_ws
+ConditionPathExists=/home/k3104is/workspace/setup_ws/systemd_ws
 
 [Service]
-ExecStart=/home/rpi4/workspace/setup_ws/systemd_ws/my_init.sh
+ExecStart=/home/k3104is/workspace/setup_ws/systemd_ws/my_init.sh
 Restart=no
 Type=simple
 
