@@ -1,6 +1,6 @@
 #!/bin/bash
 
-touch /home/rpi4/my_init
+touch /home/my_init
 
 # echo performance | tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
 
