@@ -28,8 +28,13 @@ alias ff='find ./ -type f'
 alias fd='find ./ -type d'
 
 # docker
+alias dc='docker compose'
 alias dcu='docker compose up -d'
 alias dcd='docker compose down'
+alias dce='_dce'
+function _dce() {
+  docker compose exec $1 /bin/bash
+}
 
 # vim
 alias vr='vim -R'
