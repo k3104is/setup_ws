@@ -4,6 +4,9 @@ require("packer").startup(function(use)
   -- Packer本体
   use "wbthomason/packer.nvim"
 
+  -- アイコン
+  use "nvim-tree/nvim-web-devicons"
+  
   -- テーマ
   use { "catppuccin/nvim", as = "catppuccin" }
 
@@ -17,6 +20,16 @@ require("packer").startup(function(use)
   use "nvim-lua/plenary.nvim"
   use "nvim-telescope/telescope.nvim"
   use "nvim-tree/nvim-tree.lua"
+  use "kevinhwang91/nvim-hlslens"
+
+  -- tab
+  use "romgrk/barbar.nvim"
+  
+  -- インデント
+  use "shellRaining/hlchunk.nvim"
+
+  -- コメント
+  use "numToStr/Comment.nvim"
 
   -- ステータスライン
   use "nvim-lualine/lualine.nvim"

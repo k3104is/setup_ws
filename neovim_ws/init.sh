@@ -12,6 +12,7 @@ sudo rm -rf /opt/nvim
 sudo mv nvim-linux-arm64 /opt/nvim
 sudo ln -sf /opt/nvim/bin/nvim /usr/local/bin/nvim
 
+sudo apt install ripgrep
 
 wget https://github.com/neovim/neovim/releases/download/v0.11.2/nvim-linux-arm64.appimage
 
