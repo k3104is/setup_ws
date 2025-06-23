@@ -25,6 +25,9 @@ vim.keymap.set("n", "<Leader>gg", ":LazyGit<CR>")
 vim.keymap.set("n", "]c", function() require("gitsigns").next_hunk() end)
 vim.keymap.set("n", "[c", function() require("gitsigns").prev_hunk() end)
 vim.keymap.set("n", "<Leader>gp", function() require("gitsigns").preview_hunk() end)
+vim.keymap.set("n", "<Leader>dv", ":DiffviewOpen<CR>", { silent = true })
+vim.keymap.set("n", "<Leader>dh", ":DiffviewFileHistory<CR>", { silent = true })
+vim.keymap.set("n", "<Leader>dc", ":DiffviewClose<CR>", { silent = true })
 
 -- move
 vim.keymap.set("n", "<C-h>", "<C-w>h")
