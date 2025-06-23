@@ -38,6 +38,7 @@ require("packer").startup(function(use)
   use "lewis6991/gitsigns.nvim"
   use "kdheepak/lazygit.nvim"
   use "sindrets/diffview.nvim"
+  use "tpope/vim-fugitive"
 
   -- キーマップ可視化
   use "folke/which-key.nvim"
