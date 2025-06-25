@@ -5,9 +5,12 @@ vim.keymap.set("n", "<Leader>ff", ":Telescope find_files<CR>")
 vim.keymap.set("n", "<Leader>fg", ":Telescope live_grep<CR>")
 vim.keymap.set("n", "<Leader>fb", "<Cmd>Telescope buffers<CR>")
 vim.keymap.set("n", "<Leader>fh", "<Cmd>Telescope help_tags<CR>")
-vim.keymap.set("n", "<Leader>tt", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>e",  ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>tf", ":NvimTreeFindFile<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>gg", ":LazyGit<CR>")
+vim.keymap.set("n", "<Leader>f", function()
+  require("nvim-tree.api").tree.find_file({ open = true })
+end, { desc = "ツリーで現在のファイルを探す" })
 
 -- lsp
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)

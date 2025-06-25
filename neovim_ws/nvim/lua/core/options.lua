@@ -13,3 +13,8 @@ vim.o.cursorline = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.hlsearch = false
+
+vim.o.splitright = true
+vim.o.splitbelow = true
+
+vim.o.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50"
