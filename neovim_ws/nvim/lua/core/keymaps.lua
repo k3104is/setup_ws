@@ -37,6 +37,11 @@ vim.keymap.set("n", "<C-e>", "$")
 vim.keymap.set("i", "<C-a>", "<Esc>^i")
 vim.keymap.set("i", "<C-e>", "<Esc>$a")
 
+-- window
+-- ファイルブラウザや Telescope で選んだファイルを右側に開く
+vim.keymap.set("n", "<Leader>sv", ":vsplit<CR>", { desc = "垂直分割" })
+vim.keymap.set("n", "<Leader>sh", ":split<CR>",  { desc = "水平分割" })
+
 -- commentout
 vim.keymap.set("v", "<Leader>ci", function()
   local start_line = vim.fn.line("'<")
@@ -64,6 +69,10 @@ vim.keymap.set("n", "<C-l>", "<C-w>l")
 -- Move to previous/next
 vim.keymap.set('n', '<S-h>', '<Cmd>BufferPrevious<CR>', { silent = true })
 vim.keymap.set('n', '<S-l>', '<Cmd>BufferNext<CR>', { silent = true })
+-- 現在のタブを閉じる
+vim.keymap.set("n", "<Leader>tc", ":tabclose<CR>", { desc = "タブを閉じる" })
+-- 他のタブを全部閉じる（現在のタブだけ残す）
+vim.keymap.set("n", "<Leader>to", ":tabonly<CR>", { desc = "現在のタブ以外を閉じる" })
 -- Go to buffer N (1〜9)
 for i = 1, 9 do
   vim.keymap.set('n', ('<A-%d>'):format(i), ('<Cmd>BufferGoto %d<CR>'):format(i), { silent = true })
