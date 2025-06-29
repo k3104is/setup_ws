@@ -18,3 +18,11 @@ vim.o.splitright = true
 vim.o.splitbelow = true
 
 vim.o.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50"
+
+-- 自動コメント補完を完全に無効化
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+  end,
+})

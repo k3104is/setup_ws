@@ -28,6 +28,23 @@ vim.keymap.set("n", "<Leader>q!", ":q!<CR>")
 vim.keymap.set("n", "<Leader>x", ":wq<CR>")
 vim.keymap.set('i', 'jj', '<Esc>', { noremap = true })
 vim.keymap.set("n", "<Leader>fm", function() vim.lsp.buf.format({ async = true }) end)
+vim.keymap.set("n", "<Leader>sr", [[:%s/\<<C-r><C-w>\>//gI<Left><Left><Left>]], { desc = "カーソル下の単語を全置換" })
+vim.keymap.set("n", "<Leader>sc", [[:%s///gc<Left><Left><Left><Left>]], { desc = "確認付き置換" })
+vim.keymap.set("v", "<Leader>sr", [[:s///g<Left><Left><Left>]], { desc = "選択範囲を置換" })
+-- ノーマルモードとインサートモード両対応で Ctrl-a / Ctrl-e にする（VSCode風）
+vim.keymap.set("n", "<C-a>", "^")
+vim.keymap.set("n", "<C-e>", "$")
+vim.keymap.set("i", "<C-a>", "<Esc>^i")
+vim.keymap.set("i", "<C-e>", "<Esc>$a")
+
+-- commentout
+vim.keymap.set("v", "<Leader>ci", function()
+  local start_line = vim.fn.line("'<")
+  local end_line = vim.fn.line("'>")
+
+  vim.fn.append(start_line - 1, "#if 0")
+  vim.fn.append(end_line + 1, "#endif")
+end, { desc = "#if0 コメントアウト" })
 
 -- git
 vim.keymap.set("n", "<Leader>gg", ":LazyGit<CR>")
@@ -58,6 +75,16 @@ vim.keymap.set('n', '<A-p>', '<Cmd>BufferPick<CR>', { silent = true })
 
 -- snipet
 local ls = require("luasnip")
+
+-- terminal
+-- Terminal を横に開く（分割）
+vim.keymap.set("n", "<Leader>th", ":split | terminal<CR>", { desc = "横にターミナル" })
+
+-- Terminal を縦に開く
+vim.keymap.set("n", "<Leader>tv", ":vsplit | terminal<CR>", { desc = "縦にターミナル" })
+
+-- Terminal から戻る（Insertモード→Normalモード）
+vim.keymap.set("t", "jj", "<C-\\><C-n>", { desc = "Terminalを抜ける" })
 
 vim.keymap.set({ "i", "s" }, "<Tab>", function()
   if ls.expand_or_jumpable() then
