@@ -53,12 +53,15 @@ end, { desc = "#if0 コメントアウト" })
 
 -- git
 vim.keymap.set("n", "<Leader>gg", ":LazyGit<CR>")
-vim.keymap.set("n", "]c", function() require("gitsigns").next_hunk() end)
-vim.keymap.set("n", "[c", function() require("gitsigns").prev_hunk() end)
+vim.keymap.set('n', '<leader>hr', require('gitsigns').reset_hunk, { desc = 'Reset Hunk' })
+vim.keymap.set('n', '<leader>hs', require('gitsigns').stage_hunk, { desc = 'Stage Hunk' })
+vim.keymap.set('n', ']c', require('gitsigns').next_hunk, { desc = 'Next Hunk' })
+vim.keymap.set('n', '[c', require('gitsigns').prev_hunk, { desc = 'Prev Hunk' })
 vim.keymap.set("n", "<Leader>gp", function() require("gitsigns").preview_hunk() end)
 vim.keymap.set("n", "<Leader>dv", ":DiffviewOpen<CR>", { silent = true })
 vim.keymap.set("n", "<Leader>dh", ":DiffviewFileHistory<CR>", { silent = true })
 vim.keymap.set("n", "<Leader>dc", ":DiffviewClose<CR>", { silent = true })
+-- init.lua / plugins.lua などで
 
 -- move
 vim.keymap.set("n", "<C-h>", "<C-w>h")
