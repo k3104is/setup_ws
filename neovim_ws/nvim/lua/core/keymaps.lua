@@ -11,6 +11,9 @@ vim.keymap.set("n", "<Leader>gg", ":LazyGit<CR>")
 vim.keymap.set("n", "<Leader>f", function()
   require("nvim-tree.api").tree.find_file({ open = true })
 end, { desc = "ツリーで現在のファイルを探す" })
+vim.keymap.set("n", "<Leader>/", function()
+  require("telescope.builtin").current_buffer_fuzzy_find()
+end, { desc = "現在のバッファ内をファジー検索" })
 
 -- lsp
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
@@ -36,6 +39,8 @@ vim.keymap.set("n", "<C-a>", "^")
 vim.keymap.set("n", "<C-e>", "$")
 vim.keymap.set("i", "<C-a>", "<Esc>^i")
 vim.keymap.set("i", "<C-e>", "<Esc>$a")
+-- トグル最大化
+vim.keymap.set("n", "<Leader>m", ":MaximizerToggle<CR>", { desc = "ウィンドウ最大化切替" })
 
 -- window
 -- ファイルブラウザや Telescope で選んだファイルを右側に開く
@@ -89,12 +94,14 @@ vim.keymap.set('n', '<A-p>', '<Cmd>BufferPick<CR>', { silent = true })
 local ls = require("luasnip")
 
 -- terminal
--- Terminal を横に開く（分割）
-vim.keymap.set("n", "<Leader>th", ":split | terminal<CR>", { desc = "横にターミナル" })
-
--- Terminal を縦に開く
-vim.keymap.set("n", "<Leader>tv", ":vsplit | terminal<CR>", { desc = "縦にターミナル" })
-
+-- 上に開くターミナル
+vim.keymap.set("n", "<Leader>tu", "<Cmd>topleft split<CR><Cmd>resize 5<CR><Cmd>terminal<CR><Cmd>startinsert<CR>", { desc = "上にターミナル" })
+-- 下に開くターミナル
+vim.keymap.set("n", "<Leader>td", "<Cmd>botright split<CR><Cmd>resize 5<CR><Cmd>terminal<CR><Cmd>startinsert<CR>", { desc = "下にターミナル" })
+-- 右に開くターミナル（垂直分割）
+vim.keymap.set("n", "<Leader>tr", "<Cmd>vsplit<CR><Cmd>terminal<CR><Cmd>startinsert<CR>", { desc = "右にターミナル" })
+-- 左に開くターミナル（垂直分割）
+vim.keymap.set("n", "<Leader>tl", "<Cmd>leftabove vsplit<CR><Cmd>terminal<CR><Cmd>startinsert<CR>", { desc = "左にターミナル" })
 -- Terminal から戻る（Insertモード→Normalモード）
 vim.keymap.set("t", "jj", "<C-\\><C-n>", { desc = "Terminalを抜ける" })
 

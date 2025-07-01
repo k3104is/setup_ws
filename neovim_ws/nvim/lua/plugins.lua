@@ -42,4 +42,7 @@ require("packer").startup(function(use)
 
   -- キーマップ可視化
   use "folke/which-key.nvim"
+
+  -- トグル最大化
+  use 'szw/vim-maximizer'
 end)
