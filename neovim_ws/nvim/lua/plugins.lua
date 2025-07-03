@@ -45,4 +45,14 @@ require("packer").startup(function(use)
 
   -- トグル最大化
   use 'szw/vim-maximizer'
+
+  -- 構文解析プラグイン
+  use {
+  "nvim-treesitter/nvim-treesitter",
+  run = ":tsupdate"
+  }
+  use {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    after = "nvim-treesitter"
+  }
 end)

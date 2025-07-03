@@ -41,6 +41,8 @@ vim.keymap.set("i", "<C-a>", "<Esc>^i")
 vim.keymap.set("i", "<C-e>", "<Esc>$a")
 -- トグル最大化
 vim.keymap.set("n", "<Leader>m", ":MaximizerToggle<CR>", { desc = "ウィンドウ最大化切替" })
+vim.keymap.set("v", "<", "<gv", { desc = "選択範囲を左にインデント" })
+vim.keymap.set("v", ">", ">gv", { desc = "選択範囲を右にインデント" })
 
 -- window
 -- ファイルブラウザや Telescope で選んだファイルを右側に開く
