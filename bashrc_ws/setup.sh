@@ -29,5 +29,10 @@ fi
 
 cp ./${EXPORTS_NAME} ~/${EXPORTS_NAME}
 
+# bin
+if [ ! -d ~/bin ]; then
+  mkdir ~/bin
+fi
+
 
 . ~/.bashrc

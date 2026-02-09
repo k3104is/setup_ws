@@ -43,6 +43,9 @@ function _dce() {
 # vim
 alias vr='vim -R'
 
+# just
+alias j='just'
+
 # 1 charactor
 alias b='byobu'
 alias c='cd'
